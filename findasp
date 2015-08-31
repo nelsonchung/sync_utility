@@ -1,0 +1,1 @@
+find . ! -path "*.svn*" ! -name "cscope.out" ! -name "*.o" ! -name "*.shortmap" ! -name "tags" -name "*.asp" -exec grep --color -n "$1" {} + 

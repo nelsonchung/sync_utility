@@ -1,0 +1,36 @@
+#
+#ignore_str="! -path \"*.svn*\" ! -name \"*.shortmap\" ! -name \"tags\" ! -name \"*.o\""
+#ignore_str='! -path "*.svn*" ! -name "*.shortmap" ! -name "tags" ! -name "*.o"'
+#ignore_str='! -path "*svn" ! -name tags'
+echo "the number of input parameter is $#"
+#echo $ignore_str #fail
+if [ "$1" == "-i" ];then
+#if [ $# == 3 ];then
+    if [ "$2" == "-cpp" ];then
+        find . $ignore_str -name "*.cpp" -exec grep -i --color -n "$3" {} + 
+    elif [ "$2" == "-c" ];then
+        find . $ignore_str -name "*.c" -exec grep -i --color -n "$3" {} + 
+    elif [ "$2" == "-h" ];then
+        find . $ignore_str -name "*.h" -exec grep -i --color -n "$3" {} + 
+    elif [ "$2" == "-sh" ];then
+        find . $ignore_str -name "*.sh" -exec grep -i --color -n "$3" {} + 
+    elif [ "$2" == "-makefile" ];then
+        find . $ignore_str \( -name "Makefie" -o -name "*.mk" -o -name "makefile" \) -exec grep -i --color -n "$3" {} + 
+    else
+        find . ! -path "*.svn*" ! -name "*.shortmap" ! -name "tags" ! -name "*.o" -name "*" -exec grep -i --color -n "$2" {} + 
+    fi
+else
+    if [ "$1" == "-cpp" ];then
+        find . $ignore_str -name "*.cpp" -exec grep --color -n "$2" {} + 
+    elif [ "$1" == "-c" ];then
+        find . $ignore_str -name "*.c" -exec grep --color -n "$2" {} + 
+    elif [ "$1" == "-h" ];then
+        find . $ignore_str -name "*.h" -exec grep --color -n "$2" {} + 
+    elif [ "$1" == "-sh" ];then
+        find . $ignore_str -name "*.sh" -exec grep --color -n "$2" {} + 
+    elif [ "$1" == "-makefile" ];then
+        find . $ignore_str \( -name "Makefie" -o -name "*.mk" -o -name "makefile" \) -exec grep --color -n "$2" {} + 
+    else
+        find . ! -path "*.svn*" ! -name "*.shortmap" ! -name "tags" ! -name "*.o" -name "*" -exec grep --color -n "$1" {} + 
+    fi
+fi

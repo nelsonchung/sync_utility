@@ -1,0 +1,1 @@
+findall $1 | grep --color new
