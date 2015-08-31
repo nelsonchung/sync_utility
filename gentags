@@ -1,1 +1,3 @@
-ctags -f tags -R --c++-kinds=+p --fields=+iaS --extra=+q --exclude=boards --exclude=romfs --exclude=target $pwd 
+ignore_folder="--exclude=boards --exclude=romfs --exclude=target"
+echo $ignore_folder
+ctags -f tags -R --c++-kinds=+p --fields=+iaS --extra=+q $ignore_folder $pwd 
