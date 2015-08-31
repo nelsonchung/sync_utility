@@ -1,0 +1,32 @@
+#Init parameter
+account=nelson
+#rootbranch=svn+ssh://$account@rd2sw/svn2/CBN_BrcmCM-D3/BrcmCM-D3-Root
+#wvgbranch=svn+ssh://$account@rd2sw/svn/CV6181/BrcmCM-D3_WVG
+#rootpc20branch=svn+ssh://$account@rd2sw/svn2/CBN_BrcmCM-D3/BrcmCM-D3-Root_PC20
+rootbranch=svn+ssh://rd2sw/svn2/CBN_BrcmCM-D3/BrcmCM-D3-Root
+wvgbranch=svn+ssh://rd2sw/svn/CV6181/BrcmCM-D3_WVG
+rootpc20branch=svn+ssh://rd2sw/svn2/CBN_BrcmCM-D3/BrcmCM-D3-Root_PC20
+#
+echo "Start run svn merge"
+echo "Which branch do you want to merge from?"
+echo "1. BrcmCM-D3-Root"
+echo "2. BrcmCM-D3_WVG"
+echo "3. BrcmCM-D3-Root_PC20"
+read branch
+echo "Please input the start range."
+read revstart
+echo "Please input the end range."
+read revend
+
+if [ $branch == 1 ] ;then
+    echo "svn merge -r $revstart:$revend $rootbranch"
+    svn merge -r $revstart:$revend $rootbranch
+elif [ $branch == 2 ] ;then
+    echo "svn merge -r $revstart:$revend $wvgbranch"
+    svn merge -r $revstart:$revend $wvgbranch
+elif [ $branch == 3 ] ;then
+    echo "svn merge -r $revstart:$revend $rootpc20branch"
+    svn merge -r $revstart:$revend $rootpc20branch
+else
+    echo "not support"
+fi
