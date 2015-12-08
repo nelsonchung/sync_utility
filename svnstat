@@ -1,1 +1,2 @@
-svn stat -q 
+svn stat -q | grep M 
+svn stat -q | grep ! 
