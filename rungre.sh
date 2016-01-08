@@ -11,7 +11,7 @@ cable_modem_ipv6_vlan_id="1001"
 #support gre server can get gre packet from eth0 or wlan0
 #interface_name="eth0"
 #if you set interface_name to wlan0, you need to run setroute.sh
-interface_name="wlan0"
+interface_name="eth0"
 setroute.sh
 #6640
 cable_modem_ipv4_ip="172.16.90.53"
@@ -26,7 +26,7 @@ cable_modem_ipv4_ip="172.16.90.53"
 #cable_modem_ipv6_ip="2002:db50:fa13:90:71dd:d824:6f48:a40c"
 #cable_modem_ipv4_vlan_id="501"
 #6643
-cable_modem_ipv4_ip="172.16.90.26"
+cable_modem_ipv4_ip="172.16.90.81"
 #cable_modem_ipv4_ip="172.16.90.44"
 #cable_modem_ipv4_ip="172.16.95.39"
 
