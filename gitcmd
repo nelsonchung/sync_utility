@@ -1,0 +1,13 @@
+
+echo "1. 更新來自遠端的資訊:    git pull"
+echo "2. 同步本地端資料到遠端:  git push"
+echo "3. 無條件使用遠端的資訊:  git reset --hard origin/master"
+read option
+
+if [ "$option" == "1" ]; then
+    git push
+elif [ "$option" == "2" ]; then
+    git push
+elif [ "$option" == "3" ]; then
+    git reset --hard origin/master
+fi
