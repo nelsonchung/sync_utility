@@ -6,7 +6,7 @@ echo "4. 顯示log:               git log --stat"
 read option
 
 if [ "$option" == "1" ]; then
-    git push
+    git pull 
 elif [ "$option" == "2" ]; then
     git push
 elif [ "$option" == "3" ]; then
