@@ -4,6 +4,7 @@ echo "2. 同步本地端資料到遠端:      git push"
 echo "3. 無條件使用遠端的資訊:      git reset --hard origin/master"
 echo "4. 顯示log:                   git log --stat"
 echo "5. 顯示Remote端repository:    git remote show origin"
+echo "6. 顯示上次改變的內容:        git show"
 read option
 
 case "$option" in 
@@ -23,6 +24,9 @@ case "$option" in
     ;;
     "5")
         git remote show origin
+    ;;
+    "6")
+        git show
     ;;
     *)
     echo "Not support"
