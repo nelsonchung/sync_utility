@@ -5,6 +5,7 @@ echo "3. 無條件使用遠端的資訊:      git reset --hard origin/master"
 echo "4. 顯示log:                   git log --stat"
 echo "5. 顯示Remote端repository:    git remote show origin"
 echo "6. 顯示上次改變的內容:        git show"
+echo "7. 合入patch:                 git apply"
 read option
 
 case "$option" in 
@@ -27,6 +28,11 @@ case "$option" in
     ;;
     "6")
         git show
+    ;;
+    "7")
+        echo "Please input patch file"
+        read patch_file
+        git apply "$patch_file"
     ;;
     *)
     echo "Not support"
