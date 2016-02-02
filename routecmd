@@ -1,0 +1,23 @@
+echo "The informaiton of route table:"
+echo "========================================================"
+route -n
+echo "========================================================"
+
+echo "1. route delete:"
+echo "Please choose:"
+read option
+
+case $option in
+    "1")
+    echo "Input the information of ip address: 172.16.1.0"
+    read ipaddress
+    echo "Input the information of netmask: 255.255.255.0"
+    read netmask
+    echo "Input the information of interface: wlan0"
+    read interface
+    route del -net "$ipaddress" netmask "$netmask" "dev $interface"
+    ;;
+    *)
+    echo "Not supported"
+    ;;
+esac
