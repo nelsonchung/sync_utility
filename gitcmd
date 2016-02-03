@@ -6,6 +6,7 @@ echo "4. 顯示log:                   git log --stat"
 echo "5. 顯示Remote端repository:    git remote show origin"
 echo "6. 顯示上次改變的內容:        git show"
 echo "7. 合入patch:                 git apply"
+echo "8. 設定Local端的資訊:         git config user.name, git config user.email "
 read option
 
 case "$option" in 
@@ -33,6 +34,14 @@ case "$option" in
         echo "Please input patch file"
         read patch_file
         git apply "$patch_file"
+    ;;
+    "8")
+        echo "Please input the username"
+        read username
+        git config --global user.name "$username"
+        echo "Please input the email"
+        read email
+        git config --global user.email "$email"
     ;;
     *)
     echo "Not support"
