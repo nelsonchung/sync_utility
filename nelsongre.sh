@@ -118,4 +118,4 @@ fi
 ##################################Restart Dhcp Server####################################################
 echo "Restart Dhcp Server."
 sudo service isc-dhcp-server restart
-./makegregoworld.sh
+./makegregoworld.sh $enable_gre_interface
