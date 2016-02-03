@@ -15,7 +15,7 @@ case $option in
     read netmask
     echo "Input the information of interface: wlan0"
     read interface
-    route del -net "$ipaddress" netmask "$netmask" "dev $interface"
+    sudo route del -net "$ipaddress" netmask "$netmask" dev "$interface"
     ;;
     *)
     echo "Not supported"
