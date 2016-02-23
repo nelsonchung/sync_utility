@@ -7,6 +7,7 @@ echo "5. 顯示Remote端repository:    git remote show origin"
 echo "6. 顯示上次改變的內容:        git show"
 echo "7. 合入patch:                 git apply"
 echo "8. 設定Local端的資訊:         git config user.name, git config user.email "
+echo "9. 更新fork branch的資料:     git checkout master, git pull upstream master and checkout back"
 read option
 
 case "$option" in 
@@ -42,6 +43,11 @@ case "$option" in
         echo "Please input the email"
         read email
         git config --global user.email "$email"
+    ;;
+    "9")
+        git checkout master
+        git pull upstream master
+        git checkout nelson_develop
     ;;
     *)
     echo "Not support"
