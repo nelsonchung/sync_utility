@@ -1,13 +1,14 @@
 
-echo "1. 更新來自遠端的資訊:        git pull"
-echo "2. 同步本地端資料到遠端:      git push"
-echo "3. 無條件使用遠端的資訊:      git reset --hard origin/master"
-echo "4. 顯示log:                   git log --stat"
-echo "5. 顯示Remote端repository:    git remote show origin"
-echo "6. 顯示上次改變的內容:        git show"
-echo "7. 合入patch:                 git apply"
-echo "8. 設定Local端的資訊:         git config user.name, git config user.email "
-echo "9. 更新fork branch的資料:     git checkout master, git pull upstream master and checkout back"
+echo "1.    更新來自遠端的資訊:                git pull"
+echo "2.    同步本地端資料到遠端:              git push"
+echo "3.    無條件使用遠端的資訊:              git reset --hard origin/master"
+echo "4.    顯示log:                           git log --stat"
+echo "5.    顯示Remote端repository:            git remote show origin"
+echo "51.   顯示Remote端repository(簡化版):   git remote -v"
+echo "6.    顯示上次改變的內容:                git show"
+echo "7.    合入patch:                         git apply"
+echo "8.    設定Local端的資訊:                 git config user.name, git config user.email "
+echo "9.    更新fork branch的資料:             git checkout master, git pull upstream master and checkout back"
 read option
 
 case "$option" in 
@@ -27,6 +28,9 @@ case "$option" in
     ;;
     "5")
         git remote show origin
+    ;;
+    "51")
+        git remote -v
     ;;
     "6")
         git show
