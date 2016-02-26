@@ -13,7 +13,6 @@ echo "9.    更新fork branch的資料:             git checkout master, git pul
 echo "10.   目前狀況:                          git status"
 read option
 
-
 case "$option" in 
     //"")
     //;;
