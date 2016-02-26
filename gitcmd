@@ -4,7 +4,8 @@ echo "2.    同步本地端資料到遠端:              git push"
 echo "3.    無條件使用遠端的資訊:              git reset --hard origin/master"
 echo "4.    顯示log:                           git log --stat"
 echo "5.    顯示Remote端repository:            git remote show origin"
-echo "51.   顯示Remote端repository(簡化版):   git remote -v"
+echo "51.   顯示Remote端repository(簡化版):    git remote -v"
+echo "52.   加入Remote端repository:            git remote add upstream some_path"
 echo "6.    顯示上次改變的內容:                git show"
 echo "7.    合入patch:                         git apply"
 echo "8.    設定Local端的資訊:                 git config user.name, git config user.email "
@@ -33,6 +34,11 @@ case "$option" in
     ;;
     "51")
         git remote -v
+    ;;
+    "52")
+        echo "Please input the remote http path"
+        read remote_path
+        git remote add upstream "$remote_path"
     ;;
     "6")
         git show
