@@ -9,6 +9,7 @@ echo "6.    顯示上次改變的內容:                git show"
 echo "7.    合入patch:                         git apply"
 echo "8.    設定Local端的資訊:                 git config user.name, git config user.email "
 echo "9.    更新fork branch的資料:             git checkout master, git pull upstream master and checkout back"
+echo "10.   目前狀況:                          git status"
 read option
 
 case "$option" in 
@@ -52,6 +53,9 @@ case "$option" in
         git checkout master
         git pull upstream master
         git checkout nelson_develop
+    ;;
+    "10")
+        git status
     ;;
     *)
     echo "Not support"
