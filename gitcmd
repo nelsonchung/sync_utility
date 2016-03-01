@@ -8,6 +8,7 @@ echo "51.   顯示Remote端repository(簡化版):    git remote -v"
 echo "52.   加入Remote端repository:            git remote add upstream some_path"
 echo "6.    顯示上次改變的內容:                git show"
 echo "7.    合入patch:                         git apply"
+echo "71.   產生patch:                         git diff"
 echo "8.    設定Local端的資訊:                 git config user.name, git config user.email "
 echo "9.    更新fork branch的資料:             git checkout master, git pull upstream master and checkout back"
 echo "10.   目前狀況:                          git status"
@@ -43,9 +44,14 @@ case "$option" in
         git show
     ;;
     "7")
-        echo "Please input patch file"
+        echo "Please input the name patch file"
         read patch_file
         git apply "$patch_file"
+    ;;
+    "71")
+        echo "Please input the name of patch file"
+        read patch_file
+        git diff > "$patch_file"
     ;;
     "8")
         echo "Please input the username"
