@@ -1,16 +1,17 @@
-echo "0. Compress sample cmd"
-echo "5. Compress .tar.gz"
-echo "6. Decompress .tar.gz"
-echo "7. Decompress .bz"
-echo "11. .tar.Z"
-echo "12. .tgz"
+echo "0.   Compress sample cmd"
+echo "3.   Compress .tar.gz"
+echo "31.  Decompress .tar.gz"
+echo "4.   Decompress .bz"
+echo "7.   Compress .tar.bz2"
+echo "71.  Decompress .tar.bz2"
+echo "11.  Compress .tar.Z"
+echo "111. Decompress .tar.Z"
+echo "12.  Compress .tgz"
+echo "121. Decompress .tgz"
 read option
 
 case "$option" in
-    "0")
-    echo "Compress sample"
-    ;;
-    "5")
+    "3")
     echo "Compress .tar.gz"
     echo "Please input filename:"
     read filename
@@ -18,52 +19,63 @@ case "$option" in
     read dirname
     tar zcvf $filename\.tar.gz $dirname
     ;;
-    "6")
+    "31")
     echo "Decompress .tar.gz"
     echo "Please input filename:"
     read filename
     tar zxvf $filename\.tar.gz
     ;;
-    "7")
+    "4")
     echo "Decompress .bz"
     echo "Please input filename:"
     read filename
     bunzip2 -d $filename.bz
+    "7")
+    echo "Compress .tar.bz2"
+    echo "Please input filename:"
+    read filename
+    echo "Please input directory:"
+    read dirname
+    tar jcvf $filename\.tar.bz2 $dirname
+    ;;
+    "71")
+    echo "Decompress .tar.gz"
+    echo "Please input filename:"
+    read filename
+    tar jxvf $filename\.tar.bz2
+    ;;
+    "8")
+    echo "Compress .xz"
+    echo "Please input filename:"
+    read filename
+    echo "Please input directory:"
+    read dirname
+    xz -z $filename\.xz $dirname
+    ;;
+    "81")
+    echo "Decompress .xz"
+    echo "Please input filename:"
+    read filename
+    xz -d $filename\.xz
+    ;;
     "11")
-        echo "Select action."
-        echo "1. Compress file"
-        echo "2. Uncompress file"
-        read action
-        case "$action" in
-        "1")
-            read -p "Please input filename : " filename
-            read -p "Please input dirname : " dirname
-            echo `tar zcvf $filename.tar.Z $dirname`
-            ;;
-        "2")
-            read -p "Please input filename : " filename
-            echo `tar zxvf $filename.tar.Z`
-            ;;
-        esac
+    read -p "Please input filename : " filename
+    read -p "Please input dirname : " dirname
+    echo `tar zcvf $filename.tar.Z $dirname`
+    ;;
+    "111")
+    read -p "Please input filename : " filename
+    echo `tar zxvf $filename.tar.Z`
     ;;
     "12")
-        echo "Select action."
-        echo "1. Compress file"
-        echo "2. Uncompress file"
-        read action
-        case "$action" in
-        "1")
-            read -p "Please input filename : " filename
-            echo `tar zcvf $filename.tgz $filename`
-            ;;
-        "2")
-            read -p "Please input filename : " filename
-            echo `tar zxvf $filename.tgz`
-            ;;
-        esac
+    read -p "Please input filename : " filename
+    echo `tar zcvf $filename.tgz $filename`
     ;;
-    "*")
+    "121")
+    read -p "Please input filename : " filename
+    echo `tar zxvf $filename.tgz`
+    ;;
+    *)
     echo "Not supported"
     ;;
-    
 esac
