@@ -12,6 +12,8 @@ echo "11.  Compress .tar.Z"
 echo "111. Decompress .tar.Z"
 echo "12.  Compress .tgz"
 echo "121. Decompress .tgz"
+echo "13.  Compress .tar.tgz"
+echo "131. Decompress .tar.tgz"
 echo "15.  Compress .tar.bz"
 echo "151. Decompress .tar.bz"
 echo "16.  Compress .bz"
@@ -107,7 +109,14 @@ case "$option" in
     read -p "Please input filename : " filename
     echo `tar zxvf $filename.tgz`
     ;;
-    *)
+    "13")
+        read -p "Please input filename : " filename
+        tar zcvf $filename.tar.tgz $filename
+    ;;
+    "131")
+        read -p "Please input filename : " filename
+        tar zxvf $filename.tar.tgz
+    ;;
     "15")
         echo "Not supported"
     ;;
