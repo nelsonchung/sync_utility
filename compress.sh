@@ -12,6 +12,10 @@ echo "11.  Compress .tar.Z"
 echo "111. Decompress .tar.Z"
 echo "12.  Compress .tgz"
 echo "121. Decompress .tgz"
+echo "15.  Compress .tar.bz"
+echo "151. Decompress .tar.bz"
+echo "16.  Compress .bz"
+echo "161. Deompress .bz"
 read option
 
 case "$option" in
@@ -104,6 +108,22 @@ case "$option" in
     echo `tar zxvf $filename.tgz`
     ;;
     *)
+    "15")
+        echo "Not supported"
+    ;;
+    "151")
+        read -p "Please input filename : " filename
+        echo `tar jxvf $filename.tar.bz`
+    ;;
+    "16")
+        read -p "Please input filename : " filename
+        echo `bzip2 -z $filename`
+    ;;
+    "161")
+        read -p "Please input filename : " filename
+        echo `bzip2 -d $filename.bz2`
+    ;;
+    "*")
     echo "Not supported"
     ;;
 esac
