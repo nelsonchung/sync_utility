@@ -1,7 +1,6 @@
 echo "1. wifi重新掃描"
 read option
 
-    esac
 case "$option" in 
     "1")
         sudo iwlist wlan0 scan
