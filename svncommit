@@ -1,0 +1,44 @@
+svnstat > svnstat.log
+
+count=0
+#show all modified files
+while read line
+do
+    file_info=`echo $line | awk -F 'M' '{print $2}'`
+    commit_file_name[$count]="$file_info"
+    count=`expr $count + 1`
+    echo "$count. $file_info"
+done < svnstat.log
+
+
+#Let user choose what kind of file they want to commit
+index_for_commit_file=0
+keep_going=1
+while [ $keep_going -eq 1 ]
+do
+    echo "Choose the option of file that you want to commit"
+    read number 
+    commit_file[$index_for_commit_file]=`expr $number - 1`
+
+    echo "Still need to choose another files (y/n)?"
+    read option
+    if [ "$option" = "y" ]; then
+        index_for_commit_file=`expr $index_for_commit_file + 1`
+        #echo $index_for_commit_file
+        keep_going=1
+    else
+        #echo $index_for_commit_file
+        keep_going=0
+    fi
+done
+
+#Get the files information that you want to do svn commit
+for i in $(seq 0 $index_for_commit_file)
+do
+    #echo $i
+    #echo ${commit_file[$i]}
+    #echo ${commit_file_name[${commit_file[$i]}]}
+    svn_commit_file_name="$svn_commit_file_name ${commit_file_name[${commit_file[$i]}]}"
+done
+
+echo "svn commit " $svn_commit_file_name
