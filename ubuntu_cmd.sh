@@ -2,6 +2,7 @@
 echo "1. 編輯sources.list"
 echo "2. 新增使用者"
 echo "3. 將使用者擁有sudo權限"
+echo "4. 加入外部軟體來源
 read option
 
 case "$option" in
@@ -16,6 +17,12 @@ case "$option" in
     "3")
     sudo vim /etc/sudoers
     sudo cat /etc/sudoers
+    ;;
+    "4")
+    echo "Input the ppa path"
+    read ppa_path
+    sudo add-apt-repository "$ppa_path"
+    sudo apt-get update
     ;;
     *)
     ;;
