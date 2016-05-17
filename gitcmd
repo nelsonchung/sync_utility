@@ -12,6 +12,7 @@ echo "7.    合入patch:                         git apply"
 echo "71.   產生patch:                         git diff"
 echo "72.   從別的branch合入patch              git merge --no-ff xxx_branch"
 echo "8.    設定Local端的資訊:                 git config user.name, git config user.email "
+echo "81.   簡化git push上傳github出現的訊息:  git config --global push.default simple"
 echo "9.    更新fork branch的資料:             git checkout master, git pull upstream master and checkout back"
 echo "10.   目前狀況:                          git status"
 read option
@@ -70,6 +71,9 @@ case "$option" in
         echo "Please input the email"
         read email
         git config --global user.email "$email"
+    ;;
+    "81")
+        git config --global push.default simple
     ;;
     "9")
         git checkout master
