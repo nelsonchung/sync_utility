@@ -1,9 +1,23 @@
 echo "1. wifi重新掃描"
+echo "2. wifi找出附近AP"
+echo "3. 顯示所有wireless interface的資訊"
+echo "4. Remove virtual interface"
 read option
 
 case "$option" in 
     "1")
         sudo iwlist wlan0 scan
+    ;;
+    "2")
+        sudo iw dev wlan0 scan 
+    ;;
+    "3")
+        iw dev 
+    ;;
+    "4")
+        echo "輸入要刪除的virtual name"
+        read virtual_name
+        sudo iw dev $virtual_name del 
     ;;
 esac
 
