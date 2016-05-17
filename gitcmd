@@ -1,6 +1,7 @@
 
 echo "1.    更新來自遠端的資訊:                git pull"
 echo "2.    同步本地端資料到遠端:              git push"
+echo "21.   同步本地端資料到遠端(first time):  git push -u origin master"
 echo "3.    無條件使用遠端的資訊:              git reset --hard origin/master"
 echo "4.    顯示log:                           git log --stat"
 echo "5.    顯示Remote端repository:            git remote show origin"
@@ -23,6 +24,9 @@ case "$option" in
     ;;
     "2")
         git push
+    ;;
+    "21")
+        git push -u origin master
     ;;
     "3")
         git reset --hard origin/master
