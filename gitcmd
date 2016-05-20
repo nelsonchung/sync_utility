@@ -14,7 +14,8 @@ echo "72.   從別的branch合入patch              git merge --no-ff xxx_branch
 echo "8.    設定Local端的資訊:                 git config user.name, git config user.email "
 echo "81.   簡化git push上傳github出現的訊息:  git config --global push.default simple"
 echo "9.    更新fork branch的資料:             git checkout master, git pull upstream master and checkout back"
-echo "10.   目前狀況:                          git status"
+echo "10.   刪除資料夾:                        git rm foldername -r -f"
+echo "99.   目前狀況:                          git status"
 read option
 
 case "$option" in 
@@ -81,6 +82,11 @@ case "$option" in
         git checkout nelson_develop
     ;;
     "10")
+        echo "Please input the folder name"
+        read foldername
+        git rm $foldername -r -f
+    ;;
+    "99")
         git status
     ;;
     *)
