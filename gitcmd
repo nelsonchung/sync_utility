@@ -15,6 +15,7 @@ echo "8.    設定Local端的資訊:                 git config user.name, git c
 echo "81.   簡化git push上傳github出現的訊息:  git config --global push.default simple"
 echo "9.    更新fork branch的資料:             git checkout master, git pull upstream master and checkout back"
 echo "10.   刪除資料夾:                        git rm foldername -r -f"
+echo "20.   修改前一次commit的內容:            git commit --amend"
 echo "99.   目前狀況:                          git status"
 read option
 
@@ -85,6 +86,9 @@ case "$option" in
         echo "Please input the folder name"
         read foldername
         git rm $foldername -r -f
+    ;;
+    "20")
+        git commit --amend
     ;;
     "99")
         git status
