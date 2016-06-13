@@ -16,6 +16,8 @@ echo "81.   簡化git push上傳github出現的訊息:  git config --global push
 echo "9.    更新fork branch的資料:             git checkout master, git pull upstream master and checkout back"
 echo "10.   刪除資料夾:                        git rm foldername -r -f"
 echo "20.   修改前一次commit的內容:            git commit --amend"
+echo "30.   切換分支:                          git checkout branch_name"
+echo "31.   強制切換分支:                      git checkout -f branch_name"
 echo "99.   目前狀況:                          git status"
 read option
 
@@ -89,6 +91,16 @@ case "$option" in
     ;;
     "20")
         git commit --amend
+    ;;
+    "30")
+        echo "Please input the branch name"
+        read branch_name
+        git checkout $branch_name
+    ;;
+    "31")
+        echo "Please input the branch name"
+        read branch_name
+        git checkout -f $branch_name
     ;;
     "99")
         git status
