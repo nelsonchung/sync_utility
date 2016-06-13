@@ -18,6 +18,8 @@ echo "10.   刪除資料夾:                        git rm foldername -r -f"
 echo "20.   修改前一次commit的內容:            git commit --amend"
 echo "30.   切換分支:                          git checkout branch_name"
 echo "31.   強制切換分支:                      git checkout -f branch_name"
+echo "32.   顯示分支資訊:                      git branch"
+echo "33.   刪除分支:                          git branch -d branch_name"
 echo "99.   目前狀況:                          git status"
 read option
 
@@ -101,6 +103,14 @@ case "$option" in
         echo "Please input the branch name"
         read branch_name
         git checkout -f $branch_name
+    ;;
+    "32")
+        git branch
+    ;;
+    "33")
+        echo "Please input the branch name that you want to delete"
+        read branch_name
+        git branch -d $branch_name
     ;;
     "99")
         git status
