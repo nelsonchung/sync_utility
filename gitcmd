@@ -108,6 +108,7 @@ case "$option" in
         git branch
     ;;
     "33")
+        git branch
         echo "Please input the branch name that you want to delete"
         read branch_name
         git branch -d $branch_name
