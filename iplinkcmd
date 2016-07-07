@@ -1,0 +1,117 @@
+
+echo "1.顯示出所有的介面資訊:" 
+echo "2.顯示interface資訊"
+echo "3.關閉裝置"
+echo "4.啟動裝置"
+echo "5.設定裝置mtu information"
+echo "6.修改網路卡代號"
+echo "7.修改網路卡mac"
+echo "8.新增一個介面"
+echo "9.刪除一個界面"
+echo "10.顯示路由"
+echo "11.增加路由，主要是本機直接可溝通的網域"
+echo "12.增加可以通往外部的路由，需透過router"
+echo "13.增加預設路由"
+echo "14.刪除路由"
+
+
+case "$option" in 
+    "1")
+        ip link show
+    ;;
+    "2")
+        echo "請輸入interface名稱（eth0）"
+        read interface_name
+        ip -s link show $interface_name
+    ;;
+    "3")
+        echo "請輸入interface名稱（eth0）"
+        read interface_name
+        ip link set $interface_name down
+    ;;
+    "4")
+        echo "請輸入interface名稱（eth0）"
+        read interface_name
+        ip link set $interface_name up
+    ;;
+    "5")
+        echo "請輸入interface名稱（eth0）"
+        read interface_name
+        echo "請輸入mtu"
+        read mtu_number
+        ip link set $interface_name mtu $mtu_number
+    ;;
+    "6")
+        echo "請輸入interface名稱（eth0）"
+        read interface_name
+        echo "請輸入修改名稱"
+        read change_name
+        ip link set $interface_name down
+        ip link set eth0 name "$change_name"
+        ip link set eth0 up
+    ;;
+    "7")
+        echo "請輸入interface名稱（eth0）"
+        read interface_name
+        echo "請輸入mac address"
+        read mac_address
+        ip link set $interface_name down
+        ip link set eth0 address aa:aa:aa:aa:aa:aa
+        ip link set eth0 up
+    ;;
+    "8")
+        echo "請輸入ip information（192.168.88.88/24）"
+        read ip_info
+        echo "請輸入新增於哪個interface之下（eth0）"
+        read interface_name
+        echo "請輸入新增interface name（eth0）"
+        read new_interface_name
+        ip address add $ip_info broadcast + dev "$interface_name" label "$new_interface_name"
+    ;;
+    "9")
+        echo "請輸入ip information（192.168.88.88）"
+        read ip_info
+        echo "請輸入interface name"
+        read interface_name
+        ip address del "$ip_info" dev "$interface_name"
+    ;;
+    "10")
+        ip route show
+    ;;
+    "11")
+        echo "請輸入ip information（192.168.88.88/24）"
+        read ip_info
+        echo "請輸入新增於哪個interface之下（eth0）"
+        read interface_name
+        ip route add "$ip_info" dev "$interface_name"
+    ;;
+    "12")
+        echo "Example: ip route add 192.168.10.0/24 via 192.168.5.100 dev eth0"
+        echo "請輸入ip information（192.168.10.0/24）"
+        read ip_info
+        echo "請輸入via information（192.168.5.100）"
+        read via_info
+        echo "請輸入interface name（eth0）"
+        read interface_name
+        ip route add "$ip_info" via "$via_info" dev "$interface_name"
+    ;;
+    "13")
+        echo "Example: ip route add default via 192.168.1.254 dev eth0"
+        echo "請輸入ip information（192.168.1.254）"
+        read ip_info
+        echo "請輸入interface name（eth0）"
+        read interface_name
+        ip route add default via "$ip_info" dev "$interface_name"
+    ;;
+    "14")
+        echo "ip route del 192.168.10.0/24"
+        echo "請輸入ip information（192.168.10.0/24）"
+        read ip_info
+        ip route del "$ip_info"
+    ;;
+    *)
+        echo "Not support"
+        exit 1
+    ;;
+esac 
+
