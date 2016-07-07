@@ -15,7 +15,8 @@ echo "1.    更新來自遠端的資訊:                git pull"
 echo "2.    同步本地端資料到遠端:              git push"
 echo "21.   同步本地端資料到遠端(first time):  git push -u origin master"
 echo "3.    無條件使用遠端的資訊:              git reset --hard origin/master"
-echo "4.    顯示log:                           git log --stat"
+echo "40.   顯示分支資訊:                      git branch"
+echo "41.   刪除分支:                          git branch -d branch_name"
 echo "5.    顯示Remote端repository:            git remote show origin"
 echo "51.   顯示Remote端repository(簡化版):    git remote -v"
 echo "52.   加入Remote端repository:            git remote add upstream some_path"
@@ -25,13 +26,13 @@ echo "71.   產生patch:                         git diff"
 echo "72.   從別的branch合入patch              git merge --no-ff xxx_branch"
 echo "8.    設定Local端的資訊:                 git config user.name, git config user.email "
 echo "81.   簡化git push上傳github出現的訊息:  git config --global push.default simple"
-echo "9.    更新fork branch的資料:             git checkout master, git pull upstream master and checkout back"
+echo "9.    顯示log:                           git log --stat"
 echo "10.   刪除資料夾:                        git rm foldername -r -f"
 echo "20.   修改前一次commit的內容:            git commit --amend"
 echo "30.   切換分支:                          git checkout branch_name"
 echo "31.   強制切換分支:                      git checkout -f branch_name"
-echo "32.   顯示分支資訊:                      git branch"
-echo "33.   刪除分支:                          git branch -d branch_name"
+echo "32.   svn update -r:                      git checkout revision(the same as svn update -r rev)"
+echo "33.   更新fork branch的資料:             git checkout master, git pull upstream master and checkout back"
 echo "99.   目前狀況:                          git status"
 echo "100.  常用組合 - 整合分支並同步到github"
 read option
@@ -50,9 +51,6 @@ case "$option" in
     ;;
     "3")
         git reset --hard origin/master
-    ;;
-    "4")
-        git log --stat
     ;;
     "5")
         git remote show origin
@@ -89,14 +87,11 @@ case "$option" in
         read email
         git config --global user.email "$email"
     ;;
+    "9")
+        git log --stat
+    ;;
     "81")
         git config --global push.default simple
-    ;;
-    "9")
-        f_git_remote_add_upstream
-        git checkout master
-        git pull upstream master
-        git push
     ;;
     "10")
         echo "Please input the folder name"
@@ -117,9 +112,20 @@ case "$option" in
         git checkout -f $branch_name
     ;;
     "32")
-        git branch
+        echo "Please input the revision number"
+        read revision_number
+        git checkout $revision_number
     ;;
     "33")
+        f_git_remote_add_upstream
+        git checkout master
+        git pull upstream master
+        git push
+    ;;
+    "40")
+        git branch
+    ;;
+    "41")
         git branch
         echo "Please input the branch name that you want to delete"
         read branch_name
