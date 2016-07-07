@@ -1,4 +1,16 @@
 
+function f_git_remote_add_upstream(){
+    echo "Do you want to add remote http path (Yy/Nn)(default is Y)?"
+    read option
+    if [ "$option" == "N" ] || [ "$option" == "n" ]; then
+        return
+    fi
+
+    echo "Please input the remote http path"
+    read remote_path
+    git remote add upstream "$remote_path"
+}
+
 echo "1.    更新來自遠端的資訊:                git pull"
 echo "2.    同步本地端資料到遠端:              git push"
 echo "21.   同步本地端資料到遠端(first time):  git push -u origin master"
@@ -48,9 +60,7 @@ case "$option" in
         git remote -v
     ;;
     "52")
-        echo "Please input the remote http path"
-        read remote_path
-        git remote add upstream "$remote_path"
+        f_git_remote_add_upstream
     ;;
     "6")
         git show
@@ -82,9 +92,10 @@ case "$option" in
         git config --global push.default simple
     ;;
     "9")
+        f_git_remote_add_upstream
         git checkout master
         git pull upstream master
-        git checkout nelson_develop
+        git push
     ;;
     "10")
         echo "Please input the folder name"
