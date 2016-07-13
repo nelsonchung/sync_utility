@@ -3,7 +3,10 @@ echo "1.    更新來自遠端的資訊:                git pull"
 echo "2.    同步本地端資料到遠端:              git push"
 echo "21.   同步本地端資料到遠端(first time):  git push -u origin master"
 echo "3.    無條件使用遠端的資訊:              git reset --hard origin/master"
-echo "4.    顯示log:                           git log --stat"
+echo "4.    顯示tag:                           git tag"
+echo "41.   下tag:                             git tag -a tag_name -m log_info"
+echo "42.   顯示tag內容:                       git show tag_name"
+echo "43.   將tag資訊同步到遠端:               git push origin --tags"
 echo "5.    顯示Remote端repository:            git remote show origin"
 echo "51.   顯示Remote端repository(簡化版):    git remote -v"
 echo "52.   加入Remote端repository:            git remote add upstream some_path"
@@ -16,6 +19,7 @@ echo "81.   簡化git push上傳github出現的訊息:  git config --global push
 echo "9.    更新fork branch的資料:             git checkout master, git pull upstream master and checkout back"
 echo "10.   刪除資料夾:                        git rm foldername -r -f"
 echo "20.   修改前一次commit的內容:            git commit --amend"
+echo "30.   顯示log:                           git log --stat"
 echo "99.   目前狀況:                          git status"
 read option
 
@@ -35,7 +39,24 @@ case "$option" in
         git reset --hard origin/master
     ;;
     "4")
-        git log --stat
+        git tag 
+    ;;
+    "41")
+        echo "git tag -a tag_name -m log_info"
+        echo "Input tag_name:"
+        read tag_name
+        echo "Input log_info"
+        read log_info
+        git tag -a ${tag_name} -m ${log_info}
+    ;;
+    "42")
+        git tag
+        echo "Input the tag name"
+        read tag_name
+        git show ${tag_name}
+    ;;
+    "43")
+        git push origin --tags 
     ;;
     "5")
         git remote show origin
@@ -89,6 +110,9 @@ case "$option" in
     ;;
     "20")
         git commit --amend
+    ;;
+    "30")
+        git log --stat
     ;;
     "99")
         git status
