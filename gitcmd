@@ -25,9 +25,10 @@ echo "41.   刪除分支:                          git branch -d branch_name"
 echo "5.    顯示Remote端repository:            git remote show origin"
 echo "51.   顯示Remote端repository(簡化版):    git remote -v"
 echo "52.   加入Remote端repository:            git remote add upstream some_path"
-echo "6.    顯示tag:                           git tag"
+echo "6.    顯示tag資訊:                       git tag"
 echo "61.   下tag:                             git tag -a tag_name -m log_info"
 echo "62.   顯示tag內容:                       git show tag_name"
+echo "63.   刪除tag:                           git tag -d tag_name"
 echo "63.   將tag資訊同步到遠端:               git push origin --tags"
 echo "7.    合入patch:                         git apply"
 echo "71.   產生patch:                         git diff > patch_file_name"
@@ -127,6 +128,12 @@ case "$option" in
     ;;
     "63")
         git push origin --tags 
+    ;;
+    "64")
+        git tag
+        echo "Input tag name"
+        read tag_name
+        git tag -d ${tag_name}
     ;;
     "7")
         echo "Please input the name patch file"
