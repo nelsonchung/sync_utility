@@ -1,7 +1,9 @@
 
 echo "1.    更新來自遠端的資訊:                git pull"
+echo "11.   更新/Merge 來自遠端某個branch:     git pull origin branch_name"
 echo "2.    同步本地端資料到遠端:              git push"
 echo "21.   同步本地端資料到遠端(first time):  git push -u origin master"
+echo "22.   同步本地端資料到遠端某個branch:    git push -u origin branch_name"
 echo "3.    無條件使用遠端的資訊:              git reset --hard origin/master"
 echo "4.    顯示tag:                           git tag"
 echo "41.   下tag:                             git tag -a tag_name -m log_info"
@@ -29,11 +31,21 @@ case "$option" in
     "1")
         git pull 
     ;;
+    "11")
+        echo "Input the branch name"
+        read branch_name
+        git pull origin ${branch_name}
+    ;;
     "2")
         git push
     ;;
     "21")
         git push -u origin master
+    ;;
+    "22")
+        echo "Input branch name"
+        read branch_name
+        git push -u origin ${branch_name}
     ;;
     "3")
         git reset --hard origin/master
