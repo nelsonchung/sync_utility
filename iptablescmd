@@ -1,0 +1,22 @@
+
+echo "1. 列出filter table規則:      iptables -L -n"
+echo "2. 列出nat table規則:         iptables -t nat -L -n"
+echo "3. 清除防火牆規格:            iptables -F, iptables -X, iptables -Z"
+
+case "$option" in 
+    "1")
+        iptables -L -n
+    ;;
+    "2")
+        iptables -t nat -L -n
+    ;;
+    "3")
+        iptables -F
+        iptables -X
+        iptables -Z
+    ;;
+    *)
+    echo "Not support"
+    exit 1
+    ;;
+esac 

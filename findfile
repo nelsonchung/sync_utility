@@ -1,1 +1,1 @@
-find .  ! -path "*.svn*" -name "$1" | xargs ls -al
+find . -type f  ! -path "*.svn*" -name "$1" | xargs ls -al
