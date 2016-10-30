@@ -1,1 +1,1 @@
-find . ! -path "*.svn*" ! -name "cscope.out" ! -name "*.o" ! -name "*.shortmap" ! -name "tags" -name "*.pcd" -exec grep --color -n "$1" {} + 
+find . -type f ! -path "*.svn*" ! -name "cscope.out" ! -name "*.o" ! -name "*.shortmap" ! -name "tags" -name "*.pcd" -exec grep --color -n "$1" {} + 
