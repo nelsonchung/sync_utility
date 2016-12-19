@@ -40,7 +40,7 @@ echo "9.    Checkout遠端代碼:                  git clone url"
 echo "91.   Checkout遠端某個branch的代碼:      git clone url -b branch_name foldername"
 echo "10.   刪除資料夾:                        git rm foldername -r -f"
 echo "20.   修改前一次commit的內容:            git commit --amend"
-echo "30.   顯示log:                           git log --stat"
+echo "30.   顯示log:                           git log --stat ."
 echo "40.   顯示上次改變的內容:                git show"
 echo "50.   無條件使用遠端的資訊:              git reset --hard origin/master"
 echo "99.   目前狀況:                          git status"
@@ -191,7 +191,7 @@ case "$option" in
         git commit --amend
     ;;
     "30")
-        git log --stat
+        git log --stat .
     ;;
     "40")
         git show
