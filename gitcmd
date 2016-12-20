@@ -21,6 +21,7 @@ echo "31.   強制切換分支:                      git checkout -f branch_name
 echo "32.   svn update -r:                     git checkout revision(the same as svn update -r rev)"
 echo "33.   更新fork branch的資料:             git checkout master, git pull upstream master and checkout back"
 echo "34.   建立branch:                        git checkout -b branch_name"
+echo "35.   檔案還原:                          git checkout -- <file>"
 echo "4.    顯示分支資訊:                      git branch"
 echo "41.   刪除分支:                          git branch -d branch_name"
 echo "5.    顯示Remote端repository:            git remote show origin"
@@ -97,6 +98,12 @@ case "$option" in
         echo "Please input the branch name"
         read branch_name
         git checkout -b $branch_name
+    ;;
+    "35")
+        git status
+        echo "Please input the path of file"
+        read file_name
+        git checkout -- ${file_name}
     ;;
     "4")
         git branch
