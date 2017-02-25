@@ -1,0 +1,23 @@
+
+echo "1. check the service port information:  netstat -ln"
+echo "2. check the service tcp port information:  netstat -ltn"
+echo "3. check the service udp port information:  netstat -lun"
+read option
+
+case "$option" in 
+    //"")
+    //;;
+    "1")
+    netstat -ln
+    ;;
+    "2")
+    netstat -ltn
+    ;;
+    "3")
+    netstat -lun
+    ;;
+    *)
+    echo "Not support"
+    exit 1
+    ;;
+esac 
