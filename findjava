@@ -1,0 +1,1 @@
+find . -type f ! -path "*.svn*" -name "*.java" -exec grep --color -n "$1" {} + 
