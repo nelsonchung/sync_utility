@@ -6,6 +6,8 @@ echo "3.   新增群組"
 echo "4.   將使用者擁有sudo權限"
 echo "5.   加入外部軟體來源"
 echo "6.   tftp conneciton"
+echo "7.   更新軟體套件"
+echo "8.   系統升級到新版本"
 read option
 
 case "$option" in
@@ -43,6 +45,15 @@ case "$option" in
     echo "Input tftp server ip address"
     read ip_address
     tftp "$ip_address" 69
+    ;;
+    "7")
+    sudo apt-get update
+    sudo apt-get upgrade
+    ;;
+    "8")
+    sudo apt-get update
+    sudo apt-get dist-upgrade
+    sudo apt-get upgrade
     ;;
     *)
     ;;
