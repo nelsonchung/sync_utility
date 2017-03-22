@@ -8,6 +8,7 @@ echo "5.   加入外部軟體來源"
 echo "6.   tftp conneciton"
 echo "7.   更新軟體套件"
 echo "8.   系統升級到新版本"
+echo "9.   apt-cache 搜尋套件"
 read option
 
 case "$option" in
@@ -54,6 +55,11 @@ case "$option" in
     sudo apt-get update
     sudo apt-get dist-upgrade
     sudo apt-get upgrade
+    ;;
+    "9")
+    echo "Input the package name"
+    read package_name
+    apt-cache search "$package_name"
     ;;
     *)
     ;;
