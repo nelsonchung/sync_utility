@@ -1,10 +1,14 @@
 
+
+while [ 1 ]
+do
 echo "1.   載入Qualcomm參數"
 echo "2.   編譯全部images - aboot, kernel, system and userdata images"
 echo "3.   編譯 aboot image"
 echo "4.   編譯 kernel image"
 echo "5.   編譯 system image"
 echo "6.   編譯 userdata image"
+echo "輸入Ctrl+c 離開程式"
 read option
 
 PWD=`pwd`
@@ -52,4 +56,4 @@ case "$option" in
     ;;
 esac
 
-sync
+done
