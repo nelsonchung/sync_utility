@@ -9,7 +9,7 @@ PWD=`pwd`
 
 case "$option" in
     "1")
-    cmd="sudo apt-get install bison openjdk-8-jdk git jackd"
+    cmd="sudo apt-get install bison g++-multilib git gperf libxml2-utils make zlib1g-dev:i386 zip openjdk-8-jdk jackd"
     echo "$cmd"
     $cmd
     ;;
