@@ -1,7 +1,8 @@
 
 echo "1. Add the information - album and songer"
 echo "2. Add cover image"
-echo "3. Download mp3 from youtube"
+echo "3. Remove cover image"
+echo "4. Download mp3 from youtube"
 read option
 
 case "$option" in 
@@ -19,6 +20,11 @@ case "$option" in
     eyeD3 --add-image cover.jpg:FRONT_COVER *.mp3
     ;;
     "3")
+    echo "請輸入檔名"
+    read filename
+    eyeD3 --remove-all-images "$filename"
+    ;;
+    "4")
     echo "請輸入youtube網址"
     read youtubelink
     youtube-dl -f bestaudio --audio-quality 0 --audio-format mp3 -i -x --extract-audio "$youtubelink"
