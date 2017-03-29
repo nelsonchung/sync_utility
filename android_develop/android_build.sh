@@ -24,6 +24,7 @@ case "$option" in
     ;;
     "2")
     cpucore=`cat /proc/cpuinfo | grep processor | wc -l`
+    cpucore=`expr $cpucore * 2 + 2`
     cmd="make -j$cpucore"
     echo "$cmd"
     $cmd
@@ -48,7 +49,7 @@ case "$option" in
     ;;
     "6")
     cpucore=`cat /proc/cpuinfo | grep processor | wc -l`
-    cmd="make userdata -j$cpucore"
+    cmd="make userdataimage -j$cpucore"
     echo "$cmd"
     $cmd
     ;;
