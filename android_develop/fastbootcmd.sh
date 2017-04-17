@@ -4,7 +4,7 @@ echo "2.   Upgrade aboot image"
 echo "3.   Upgrade boot image"
 echo "4.   Upgrade system image"
 echo "5.   Upgrade userdata image"
-echo "6.   Upgrade boot, system, userdata images"
+echo "6.   Upgrade aboot, boot, system, userdata images"
 read option
 
 PWD=`pwd`
