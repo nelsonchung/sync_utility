@@ -5,7 +5,6 @@ echo "3.   Upgrade boot image"
 echo "4.   Upgrade system image"
 echo "5.   Upgrade userdata image"
 echo "6.   Upgrade aboot, boot, system, userdata images"
-echo "7.   Enter fastoot mode"
 read option
 
 PWD=`pwd`
@@ -49,11 +48,6 @@ case "$option" in
     cmd="sudo fastboot flash userdata $PWD/userdata.img"
     echo "$cmd"
     $cmd
-    ;;
-    "7")
-    cmd="sudo adb reboot bootloader"
-    echo "$cmd"
-    $cm
     ;;
      *)
     ;;
