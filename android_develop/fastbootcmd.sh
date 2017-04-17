@@ -51,7 +51,7 @@ case "$option" in
     $cmd
     ;;
     "7")
-    cmd="adb reboot bootloader"
+    cmd="sudo adb reboot bootloader"
     echo "$cmd"
     $cm
     ;;
