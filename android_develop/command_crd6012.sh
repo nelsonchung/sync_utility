@@ -13,7 +13,7 @@ case "$option" in
     $cmd
     ;;
     "2")
-    cmd="repo init -u git@0.1.6.81:Askey/MSM8956_MM/LA1_1/manifest -b cdr6012-main -m default.xml"
+    cmd="repo init -u git@10.1.6.81:Askey/MSM8956_MM/LA1_1/manifest -b cdr6012-main -m default.xml"
     echo "$cmd"
     $cmd
     cmd="repo sync"
