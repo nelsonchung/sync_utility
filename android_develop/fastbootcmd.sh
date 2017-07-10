@@ -7,6 +7,7 @@ echo "5.   Upgrade userdata image"
 echo "6.   Upgrade boot, system images"
 echo "7.   Upgrade boot, system, userdata images"
 echo "8.   Upgrade aboot, boot, system, userdata images"
+echo "10.  reboot device"
 read option
 
 PWD=`pwd`
@@ -67,6 +68,11 @@ case "$option" in
     echo "$cmd"
     $cmd
     cmd="sudo fastboot flash userdata $PWD/userdata.img"
+    echo "$cmd"
+    $cmd
+    ;;
+    "10")
+    cmd="sudo fastboot reboot"
     echo "$cmd"
     $cmd
     ;;
