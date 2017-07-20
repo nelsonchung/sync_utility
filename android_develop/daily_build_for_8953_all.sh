@@ -1,5 +1,4 @@
-repo init -u ssh://nelson_chung@gerrit-pu101.askey.com.tw:29418/manifest -m n-mr1_qct_msm8953_wolfcombodycam.xml -g all
-repo sync
+sh bodycam_sync_from_repo_server_all.sh
 cd LA.UM.5.6/LINUX/android
 source build/envsetup.sh
 lunch msm8953_64-userdebug
