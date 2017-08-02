@@ -4,10 +4,11 @@ echo "2.   Upgrade aboot image"
 echo "3.   Upgrade boot image"
 echo "4.   Upgrade system image"
 echo "5.   Upgrade userdata image"
-echo "6.   Upgrade boot, system images"
-echo "7.   Upgrade boot, system, userdata images"
-echo "8.   Upgrade aboot, boot, system, userdata images"
-echo "10.  reboot device"
+echo "6.   Upgrade recovery image"
+echo "21.   Upgrade boot, system images"
+echo "22.   Upgrade boot, system, userdata images"
+echo "23.   Upgrade aboot, boot, system, userdata images"
+echo "99.  reboot device"
 read option
 
 PWD=`pwd`
@@ -39,6 +40,11 @@ case "$option" in
     $cmd
     ;;
     "6")
+    cmd="sudo fastboot flash recovery $PWD/recovery.img"
+    echo "$cmd"
+    $cmd
+    ;;
+    "21")
     cmd="sudo fastboot flash boot $PWD/boot.img"
     echo "$cmd"
     $cmd
@@ -46,7 +52,7 @@ case "$option" in
     echo "$cmd"
     $cmd
     ;;
-    "7")
+    "22")
     cmd="sudo fastboot flash boot $PWD/boot.img"
     echo "$cmd"
     $cmd
@@ -57,7 +63,7 @@ case "$option" in
     echo "$cmd"
     $cmd
     ;;
-    "8")
+    "23")
     cmd="sudo fastboot flash aboot $PWD/emmc_appsboot.mbn"
     echo "$cmd"
     $cmd
@@ -71,7 +77,7 @@ case "$option" in
     echo "$cmd"
     $cmd
     ;;
-    "10")
+    "99")
     cmd="sudo fastboot reboot"
     echo "$cmd"
     $cmd
