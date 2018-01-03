@@ -45,6 +45,7 @@ echo "30.   顯示當下目錄的log:                 git log --stat ."
 echo "301.   顯示commit revision的修改狀況:     git log --stat revision number"
 echo "40.   顯示上次改變的內容:                git show"
 echo "50.   無條件使用遠端的資訊:              git reset --hard origin/master"
+echo "501.  檔案回到上一次 commit的狀態:       git reset HEAD^ --hard"
 echo "99.   目前狀況:                          git status"
 echo "100.  合入某個revision:                  git cherry-pick <commit id>"
 echo "101.  合入多個revisions:                 git cherry-pick -m <commit id1> <commit id2>... <commit id3>"
@@ -211,6 +212,9 @@ case "$option" in
     ;;
     "50")
         git reset --hard origin/master
+    ;;
+    "501")
+        git reset HEAD^ --hard
     ;;
     "99")
         git status
