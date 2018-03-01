@@ -50,6 +50,7 @@ echo "502.  捨棄當下修改:                      git reset --hard"
 echo "99.   目前狀況:                          git status"
 echo "100.  合入某個revision:                  git cherry-pick <commit id>"
 echo "101.  合入多個revisions:                 git cherry-pick -m <commit id1> <commit id2>... <commit id3>"
+echo "110.  顯示差異:                          git diff --cached"
 echo "300.  常用組合 - 整合分支並同步到github"
 read option
 
@@ -232,6 +233,9 @@ case "$option" in
         echo "Input more revision numbers ( abcde12345 qwert09876 ... asdfg76543)"
         read revision_number
         git status ${revision_number}
+    ;;
+    "110")
+	    git diff --cached
     ;;
     "300")
         git branch
