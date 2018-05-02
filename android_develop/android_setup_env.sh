@@ -26,18 +26,20 @@ case "$option" in
     $cmd
     ;;
     "3")
-    cmd="mkdir -p ~/bin"
+    cmd="mkdir -p /home/`whoami`/bin"
     echo "$cmd"
     $cmd
-    cmd="curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo"
+
+    #cmd="curl https://storage.googleapis.com/git-repo-downloads/repo > /home/`whoami`/bin/repo"
+    #echo "$cmd"
+    #$cmd
+    curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+
+    cmd="chmod a+x /home/`whoami`/bin/repo"
     echo "$cmd"
     $cmd
-    cmd="chmod a+x ~/bin/repo"
-    echo "$cmd"
-    $cmd
-    cmd="PATH=~/bin:$PATH"
-    echo "$cmd"
-    $cmd
+
+    PATH=~/bin:$PATH
     ;;
     "4")
     cmd="export JACK_SERVER_VM_ARGUMENTS=\"-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4g\""
