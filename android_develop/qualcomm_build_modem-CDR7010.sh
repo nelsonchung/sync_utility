@@ -25,7 +25,7 @@ export ARMINC=$ARMINCLUDE
 export ARMBIN=$ARMROOT/bin64
 export PATH=$ARM_COMPLIER_PATH:$PATH
 export ARMHOME=$ARMROOT
-export HEXAGON_ROOT=/home/nelson_chung/Qualcomm/HEXAGON_Tools
+export HEXAGON_ROOT=/home/nelson/Qualcomm/HEXAGON_Tools
 export HEXAGON_RTOS_RELEASE=6.4.06
 
 #echo "************************************************************************"
