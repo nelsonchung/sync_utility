@@ -1,7 +1,7 @@
 #sh sync_CDR7012.sh 
 #Fix the problem - sh: 0: Can't open sync_CDR7012.sh
 source sync_CDR7010.sh 
-cd LA.UM.5.6/LINUX/android
+cd LINUX/android
 source build/envsetup.sh
 lunch msm8953_64-userdebug
 #make clean
