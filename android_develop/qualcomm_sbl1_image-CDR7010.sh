@@ -1,5 +1,4 @@
 #!/bin/bash
-#export LM_LICENSE_FILE=/home/nelson/DS-5_linux_20121022_c75116/license5.dat
 export LM_LICENSE_FILE=/usr/local/flexlm/licenses/license.dat
 export ARMTOOLS=RVCT41
 export ARMCOMPILER6_CLANGOPT=--tool_variant=ult
