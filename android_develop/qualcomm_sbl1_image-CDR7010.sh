@@ -16,4 +16,4 @@ pushd boot_images/build/ms
 #./build.sh TARGET_FAMILY=8953 --prod #it will build fail
 popd
 
-ls -al boot_images/build/ms/bin/JAASANAZ
+ls -al boot_images/build/ms/bin/JAASANAZ/sbl1.mbn
