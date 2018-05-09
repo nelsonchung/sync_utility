@@ -9,6 +9,9 @@ lunch msm8953_64-userdebug
 #make -j2 #verify ok
 #make -j4a#verify ok
 #make -j8 #verify ok
-make -j10 
 #make -j4 #test ok
 #make -j9 #test ok by Cooper and Leo
+make -j10 
+#cpu_number=`nproc`
+#echo $cpu_number
+#make -j$cpu_number
