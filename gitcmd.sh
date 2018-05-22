@@ -27,6 +27,7 @@ echo "41.   刪除分支:                          git branch -d branch_name"
 echo "5.    顯示Remote端repository:            git remote show origin"
 echo "51.   顯示Remote端repository(簡化版):    git remote -v"
 echo "52.   加入Remote端repository:            git remote add upstream some_path"
+echo "53.   顯示Remote:                        git remote"
 echo "6.    顯示tag資訊:                       git tag"
 echo "61.   下tag:                             git tag -a tag_name -m log_info"
 echo "62.   顯示tag/commit內容:                git show tag_name/git show commit revision number"
@@ -126,6 +127,9 @@ case "$option" in
     ;;
     "52")
         f_git_remote_add_upstream
+    ;;
+    "53")
+        git remote 
     ;;
     "6")
         git tag 
