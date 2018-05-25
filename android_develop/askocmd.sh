@@ -1,5 +1,6 @@
 
 echo "1.    asko sync:                "
+read option
 
 case "$option" in 
     //"")
