@@ -22,7 +22,7 @@ case "$option" in
     $cmd
     ;;
     "3")
-    cmd="source qualcomm_sbl1_image-CDR7010.sh"
+    cmd="source qualcomm_sbl1_image-CDR7010-In-License-Server.sh"
     echo "$cmd"
     $cmd
     ;;
