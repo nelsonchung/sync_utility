@@ -1,5 +1,6 @@
 
 
+echo "You need to use - source enterfolder.sh to make effect immediately"
 echo "Enter the folder:"
 echo "1.    GPIO CTL: "
 read option
