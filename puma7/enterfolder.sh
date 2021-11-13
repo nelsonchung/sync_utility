@@ -10,7 +10,7 @@ case "$option" in
     //"")
     //;;
     "1")
-        PWD=`$pwd`
+        PWD=`pwd`
         echo $PWD
         cd "$PWD/Intel_SDK/atom_rdkbos/build-puma7-atom/tmp/work/puma7_atom-rdk-linux/rdk-generic-broadband-image/1.0-r0/rootf"
     ;;
