@@ -23,7 +23,6 @@ case "$option" in
         #echo $PWD
         #ls "$PWD/Intel_SDK/atom_rdkbos/build-puma7-atom/tmp/work/puma7_atom-rdk-linux/rdk-generic-broadband-image/1.0-r0/rootfs"
     cd "$PWD/Intel_SDK/atom_rdkbos/build-puma7-atom/tmp/work/puma7_atom-rdk-linux/rdk-generic-broadband-image/1.0-r0/rootfs"
-    ls
     ;;
     "9")
     cd "$PWD/CBN_SDK/cbn-package/cbn-apps/gpio_ctl"
