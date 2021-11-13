@@ -14,11 +14,9 @@ case "$option" in
     //;;
     "1")
     cd "$PWD/CBN_SDK/products/configs/"
-    ls
     ;;
     "2")
     cd "$PWD/Intel_SDK/atom_rdkbos/build-puma7-atom/tmp/work/core2-32-rdk-linux/"
-    ls
     ;;
     "3")
         #PWD=`pwd`
@@ -29,7 +27,6 @@ case "$option" in
     ;;
     "9")
     cd "$PWD/CBN_SDK/cbn-package/cbn-apps/gpio_ctl"
-
     ;;
     *)
     echo "Not support"
