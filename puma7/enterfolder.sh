@@ -29,7 +29,7 @@ case "$option" in
     ;;
     "9")
     cd "$PWD/CBN_SDK/cbn-package/cbn-apps/gpio_ctl"
-    if [ $? -eq 0 ]
+    if [ $? -eq 1 ]
     then
     echo "Recommend you enter the folder \"CBN_PUMA7_ATOM_SDK\""
     fi
