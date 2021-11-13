@@ -17,7 +17,7 @@ case "$option" in
     ls
     ;;
     "2")
-    cd "PWD/Intel_SDK/atom_rdkbos/build-puma7-atom/tmp/work/core2-32-rdk-linux/"
+    cd "$PWD/Intel_SDK/atom_rdkbos/build-puma7-atom/tmp/work/core2-32-rdk-linux/"
     ls
     ;;
     "3")
