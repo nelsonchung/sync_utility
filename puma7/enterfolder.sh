@@ -28,7 +28,7 @@ case "$option" in
     ls
     ;;
     "9")
-        cd CBN_PUMA7_ATOM_SDK/CBN_SDK/cbn-package/cbn-apps/gpio_ctl
+        cd "$PWD/CBN_SDK/cbn-package/cbn-apps/gpio_ctl"
     ;;
     *)
     echo "Not support"
