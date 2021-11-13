@@ -14,15 +14,18 @@ case "$option" in
     //;;
     "1")
     cd "$PWD/CBN_SDK/products/configs/"
+    ls
     ;;
     "2")
     cd "PWD/Intel_SDK/atom_rdkbos/build-puma7-atom/tmp/work/core2-32-rdk-linux/"
+    ls
     ;;
     "3")
         #PWD=`pwd`
         #echo $PWD
         #ls "$PWD/Intel_SDK/atom_rdkbos/build-puma7-atom/tmp/work/puma7_atom-rdk-linux/rdk-generic-broadband-image/1.0-r0/rootfs"
     cd "$PWD/Intel_SDK/atom_rdkbos/build-puma7-atom/tmp/work/puma7_atom-rdk-linux/rdk-generic-broadband-image/1.0-r0/rootfs"
+    ls
     ;;
     "9")
         cd CBN_PUMA7_ATOM_SDK/CBN_SDK/cbn-package/cbn-apps/gpio_ctl
