@@ -28,7 +28,11 @@ case "$option" in
     ls
     ;;
     "9")
-        cd "$PWD/CBN_SDK/cbn-package/cbn-apps/gpio_ctl"
+    cd "$PWD/CBN_SDK/cbn-package/cbn-apps/gpio_ctl"
+    if [ $? -eq 0 ]
+    then
+    echo "Recommend you enter the folder "CBN_PUMA7_ATOM_SDK"
+    fi
     ;;
     *)
     echo "Not support"
