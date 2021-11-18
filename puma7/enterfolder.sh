@@ -5,6 +5,7 @@ echo "Enter the folder:"
 echo "1.    Config setting: "
 echo "2.    Build Folder: "
 echo "3.    ROOTFS: "
+echo "4.    HW Restore: "
 echo "9.    GPIO CTL: "
 read option
 PWD=`pwd`
@@ -23,6 +24,9 @@ case "$option" in
         #echo $PWD
         #ls "$PWD/Intel_SDK/atom_rdkbos/build-puma7-atom/tmp/work/puma7_atom-rdk-linux/rdk-generic-broadband-image/1.0-r0/rootfs"
     cd "$PWD/Intel_SDK/atom_rdkbos/build-puma7-atom/tmp/work/puma7_atom-rdk-linux/rdk-generic-broadband-image/1.0-r0/rootfs"
+    ;;
+    "4")
+    cd "$PWD/CBN_SDK/cbn-package/cbn-apps/cbn_hw_restore"
     ;;
     "9")
     cd "$PWD/CBN_SDK/cbn-package/cbn-apps/gpio_ctl"
