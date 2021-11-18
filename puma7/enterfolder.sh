@@ -6,6 +6,7 @@ echo "1.    Config setting: "
 echo "2.    Build Folder: "
 echo "3.    ROOTFS: "
 echo "4.    HW Restore: "
+echo "5.    NVRAM Storage: "
 echo "9.    GPIO CTL: "
 read option
 PWD=`pwd`
@@ -27,6 +28,12 @@ case "$option" in
     ;;
     "4")
     cd "$PWD/CBN_SDK/cbn-package/cbn-apps/cbn_hw_restore"
+    ;;
+    "4")
+    cd "$PWD/CBN_SDK/cbn-package/cbn-apps/cbn_hw_restore"
+    ;;
+    "5")
+    cd PUMA7-R7.0/sdk/cable/docsis/src/vendor/nvram_storage/
     ;;
     "9")
     cd "$PWD/CBN_SDK/cbn-package/cbn-apps/gpio_ctl"
