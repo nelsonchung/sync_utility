@@ -59,7 +59,7 @@ case "$option" in
     cd "$ATOM_PATH/CBN_SDK/cbn-package/cbn-nvram/nvram_db/"
     ;;
     "71")
-    cd "$ARM_PATH/PUMA7-R7.0 /sdk/common/common_components/"
+    cd "$ARM_PATH/PUMA7-R7.0/sdk/common/common_components/"
     ;;
     "9")
     cd "$ATOM_PATH/CBN_SDK/cbn-package/cbn-apps/gpio_ctl"
