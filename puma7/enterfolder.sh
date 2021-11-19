@@ -40,7 +40,7 @@ case "$option" in
     cd "$ATOM_PATH/CBN_SDK/cbn-package/cbn-apps/"
     ;;
     "41")
-    ;;cd "$PWD/CBN_SDK/cbn-package/cbn-apps/cbn_hw_restore"
+    #cd "$PWD/CBN_SDK/cbn-package/cbn-apps/cbn_hw_restore"
     cd "$ATOM_PATH/CBN_SDK/cbn-package/cbn-apps/cbn_hw_restore"
     ;;
     "42")
