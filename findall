@@ -1,3 +1,5 @@
 source setting
 #find . ! -path "*.svn*" -name "*.c" -o -name "*.h" -exec grep --color -n $1 {} + 
-find . -type f ${IGNORE_SOURCE_CONTROL} ! -name "cscope.out" ! -name "*.o" ! -name "*.shortmap" ! -name "tags" -name "*" -exec grep --color -n "$1" {} + 
+#失效，需要確認參數如何能夠正確解析
+#find . -type f ${IGNORE_SOURCE_CONTROL} ! -name "cscope.out" ! -name "*.o" ! -name "*.shortmap" ! -name "tags" -name "*" -exec grep --color -n "$1" {} + 
+find . -type f ! -path "*.svn*" ! -path "*.git*" ! -name "cscope.out" ! -name "*.o" ! -name "*.shortmap" ! -name "tags" -name "*" -exec grep --color -n "$1" {} + 
