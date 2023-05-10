@@ -1,0 +1,3 @@
+git config --global nelson.chung
+git config --global user.email chihchun.chung@gmail.com
+git config --global color.ui auto
