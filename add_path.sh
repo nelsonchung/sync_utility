@@ -4,4 +4,6 @@
 #Now always add current path
 PWD=`pwd`
 export PATH="${PATH}:$PWD"
-echo "export PATH=\"\$PATH:$PWD\"" >> ~/.bashrc
+echo "export PATH=\"\$PATH:$PWD\"" >> ~/.bashrc #for Ubuntu
+echo "export PATH=\"\$PATH:$PWD\"" >> ~/.zshrc #for MacOS
+
