@@ -1,1 +1,9 @@
-find -L . -type f -a ! -path "*.svn*" -name "$1" | xargs ls -al
+#!/bin/bash
+
+if [ $# -eq 1 ]; then
+    # 如果只有第一個參數，代表是要搜尋的keyword，則在當前目錄進行搜尋
+    find -L . -type f -a ! -path "*.svn*" -name "$1" | xargs ls -al
+else
+    # 如果有兩個參數，使用第一個參數作為搜尋路徑進行搜尋
+    find -L "$1" -type f -a ! -path "*.svn*" -name "$2" | xargs ls -al
+fi
